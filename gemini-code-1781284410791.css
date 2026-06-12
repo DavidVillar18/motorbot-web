@@ -1,0 +1,222 @@
+/* Configuración General */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Encabezado */
+header {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+/* Menú Navegación estilo Cápsula (como en tus imágenes) */
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #4a4a4a;
+    padding: 10px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.nav-btn {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    flex: 1;
+    margin: 0 5px;
+}
+
+.nav-btn:hover {
+    background-color: #2b2b2b;
+}
+
+.nav-btn.active {
+    background-color: #2b2b2b;
+    border: 1px solid #ffffff;
+}
+
+/* Contenedor Principal y Secciones */
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+.content-section {
+    display: none; /* Ocultas por defecto */
+}
+
+.content-section.active {
+    display: block; /* Solo se muestra la sección activa */
+}
+
+/* Diseño de Rejilla (Izquierda Imagen, Derecha Texto) */
+.layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .layout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tarjetas con bordes redondeados y fondo gris oscuro */
+.card-image, .card-text {
+    background-color: #333333;
+    border: 3px solid #555555;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image {
+    padding: 0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* --- ESTILOS DEL WIDGET DEL CHATBOT --- */
+#chatbot-widget {
+    position: fixed;
+    bottom: 95px;
+    right: 20px;
+    width: 320px;
+    height: 420px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+#chat-header {
+    background: #000000;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #333;
+}
+
+#chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 14px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin: 6px 0;
+    padding: 10px 14px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+    color: #000;
+}
+
+.user {
+    align-self: flex-end;
+    background-color: #000000;
+    color: white;
+}
+
+.bot {
+    align-self: flex-start;
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+#chat-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+#chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+}
+
+#chat-input button {
+    padding: 12px 18px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000000;
+    color: white;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9998;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+}
+
+#chat-toggle:hover {
+    transform: scale(1.05);
+}

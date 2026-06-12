@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorbot - Recomanador de Cotxes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>MOTORBOT</h1>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" onclick="canviarSeccio('inici')">INICI</button>
+        <button class="nav-btn" onclick="canviarSeccio('chatbot-sec')">CHATBOT</button>
+        <button class="nav-btn" onclick="canviarSeccio('sobre')">SOBRE</button>
+    </nav>
+
+    <main class="container">
+        
+        <section id="inici" class="content-section active">
+            <div class="layout-grid">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600" alt="Concessionari de cotxes">
+                </div>
+                <div class="card-text">
+                    <p>Benvingut a la pàgina principal del Motorbot, un bot de conversa dissenyat per ajudar-te en l'assessorament en la compra del teu pròxim cotxe. No dubtis en preguntar el que vulguis i no et quedis amb dubtes. Podràs accedir al bot mitjançant el botó "CHATBOT".</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="chatbot-sec" class="content-section">
+            <div class="layout-grid">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=600" alt="Chatbot IA">
+                </div>
+                <div class="card-text">
+                    <h2>Zona de Prova del Motorbot</h2>
+                    <p>Fes clic al botó flotant de color negre <strong>"TAP"</strong> que trobaràs a la cantonada inferior dreta per obrir la finestra de xat i començar a parlar amb la intel·ligència artificial.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="content-section">
+            <div class="layout-grid">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600" alt="Concessionari de cotxes">
+                </div>
+                <div class="card-text">
+                    <p>Aquest és un bot de conversa anomenat Motorbot creat per David Villar Morales, estudiant de primer de batxillerat. Ha sigut creat amb la finalitat de poder ajudar a la gent en la cerca del seu pròxim vehicle de quatre rodes. Anima't i pregunta!</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="chat-toggle">TAP</button>
+
+    <div id="chatbot-widget" style="display: none;">
+        <div id="chat-header">MOTORBOT</div>
+        <div id="chat-body">
+            <div class="message bot">
+                Hola! Sóc el Motorbot. T'ajudaré a trobar el teu cotxe ideal.
+            </div>
+        </div>
+        <div id="chat-input">
+            <input type="text" id="user-input" placeholder="Escriu aquí..." />
+            <button onclick="enviaMissatge()">Envia</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
